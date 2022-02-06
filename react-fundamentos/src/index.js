@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App.js';
+import App from './App';
 
 // ReactDOM.render(
 //     //primeiro elemento ou é uma tag html ou um componente react, ou seja, inicia-se a utilização de JSX
@@ -13,7 +13,9 @@ import App from './App.js';
 /**
  * Criando um elemento via react, utilizando o conceito Funcional Component
  */
-
+/**
+ * Render => Renderizar, basicamente, pegar o código e converter em algo que o usuário irá visualizar
+ */
 ReactDOM.render(
     <App/>,
     document.querySelector('#root')
