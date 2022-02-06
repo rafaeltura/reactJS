@@ -1,5 +1,6 @@
 import React from "react";
 import H2 from "../subtitles/H2";
+import PropTypes from "prop-types";
 
 export default function Post (props) {
     
@@ -14,4 +15,12 @@ export default function Post (props) {
             <br />
         </>
     )
+}
+
+Post.propTypes = {
+    likes: PropTypes.number.isRequired,
+    post: PropTypes.shape({
+        titulo: PropTypes.string.isRequired,
+        subtitulo: PropTypes.string
+    }).isRequired ,
 }

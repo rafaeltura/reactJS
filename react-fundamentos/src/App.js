@@ -30,22 +30,26 @@ const listPosts = [
     {
         id: 1,
         titulo: "Título Post 1",
-        subtitulo: "Subtítulo Post 1"
+        subtitulo: "Subtítulo Post 1",
+        likes: 20
     },
     {
         id: 2,
         titulo: "Título Post 2",
-        subtitulo: "Subtítulo Post 2"
+        subtitulo: "Subtítulo Post 2",
+        likes: 22
     },
     {
         id: 3,
         titulo: "Título Post 3",
-        subtitulo: "Subtítulo Post 3"
+        subtitulo: "Subtítulo Post 3",
+        likes: 11
     },
     {
         id: 4,
         titulo: "Título Post 4",
-        subtitulo: ""
+        subtitulo: "",
+        likes: 0
     },
 ];
 /**
@@ -69,6 +73,7 @@ function App() {
             { 
                 listPosts.map( ( post ) => <Post key={ post.id } 
                                                 post={ post }
+                                                likes={ post.likes }
                                             />
                 )
             }
