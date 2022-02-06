@@ -4,6 +4,7 @@ import H1 from './Components/titles/H1';
 import H2 from './Components/subtitles/H2';
 import H3 from './Components/subtitles/H3';
 import Ul from './Components/listas/Ul'
+import Header from './Components/pages/Header';
 import Post from './Components/pages/Post';
 
 const titulo = {
@@ -55,11 +56,15 @@ const listPosts = [
 function App() {
     return (
         <>
-            <H1 obj={ titulo } />
+            {/* <H1 obj={ titulo } />
             <H2/>
             <H3/>
             <Ul options={ listTarefas } style={ { listStyle: 'none' } } />
-            <hr />
+            <hr /> */}
+            <Header title="Título Header Posts">
+                <H2 titulo="Subtítulo children componentizado dentro de Header"/>
+                <small>html Children dentro de Header</small>
+            </Header>
             <hr />
             { 
                 listPosts.map( ( post ) => <Post key={ post.id } 
