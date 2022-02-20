@@ -35,32 +35,30 @@ function App() {
 
     const [ listPosts, setPosts ] = useState([
         {
-            id: 1,
+            id: Math.random(),
             titulo: "Título Post 1",
             subtitulo: "Subtítulo Post 1",
             likes: 20
         },
         {
-            id: 2,
+            id: Math.random(),
             titulo: "Título Post 2",
             subtitulo: "Subtítulo Post 2",
             likes: 22
         },
         {
-            id: 3,
+            id: Math.random(),
             titulo: "Título Post 3",
             subtitulo: "Subtítulo Post 3",
             likes: 11
         },
         {
-            id: 4,
+            id: Math.random(),
             titulo: "Título Post 4",
             subtitulo: "",
             likes: 0
         },
     ]);
-
-    //console.log({ listPosts });
 
     function handleRefresh() {
         setTimeout( () => {
@@ -68,7 +66,7 @@ function App() {
                 [ 
                     ...prevState,
                     {
-                        id: (prevState.length + 1),
+                        id: (Math.random()),
                         titulo: `Título Post ${ (prevState.length + 1) }`,
                         subtitulo: `Sub # ${ (prevState.length + 1) }`,
                         likes: ( (prevState.length + 1) * 3 )
@@ -76,6 +74,10 @@ function App() {
                 ] 
             );
         }, 2000);
+    }
+
+    function handleRemovePost( id ) {
+        setPosts( (prevState) => prevState.filter( (post) => post.id != id ));
     }
 
     return (
@@ -88,13 +90,14 @@ function App() {
             <Header title="Título Header Posts">
                 <H2 titulo="Subtítulo children componentizado dentro de Header"/>
                 <small>html Children dentro de Header</small>
-                <button onClick={ handleRefresh }> Atualizar Posts </button>
+                <button onClick={ handleRefresh  }> Atualizar Posts </button>
             </Header>
             <hr />
             { 
                 listPosts.map( ( post ) => <Post key={ post.id } 
                                                 post={ post }
                                                 likes={ post.likes }
+                                                onRemove= { handleRemovePost }
                                             />
                 )
             }
